@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eve echoes industrial calculator</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css"/>
+</head>
+<body>
+<div class="container">
+    <h3>Eve Echoes Industrial Calculator</h3>
+</div>
+
+<!-- Form -->
+<div class="container">
+    <form action="/sendBuilder" method="POST" enctype="multipart/form-data">
+
+        <label for="builder">Builder skills</label>
+        <input
+                type="text"
+                placeholder="0"
+                class="u-pull-left"
+                name="builder1"
+                style="width: 30px; margin-right: 5px"
+        />
+        <input
+                type="text"
+                placeholder="0"
+                class="u-pull-left"
+                name="builder2"
+                style="width: 30px; margin-right: 5px"
+        />
+        <input
+                type="text"
+                placeholder="0"
+                class="u-pull-left"
+                name="builder3"
+                style="width: 30px"
+        />
+        <br/>
+        <br/>
+        <br/>
+
+        <label for="blueprint">Blueprint</label>
+        <select class="u-full-width" name="blueprint">
+            {% for key, value in bpList.items() %}
+                <OPTION value={{ key }}>{{ value.name }}</option>
+            {% endfor %}
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="jita_minerals_sell_prices">Jita prices file (stats.csv)</label>
+        <input
+                type="file"
+                placeholder="Jita prices file (stats.csv)"
+                class="u-full-width"
+                name="jita_minerals_sell_prices"
+        />
+
+        <br/>
+        <br/>
+        <input type="submit" value="Calculate" id="calc_btn"
+               style="background-color: #0FA0CE; color: white"/>
+        <br/>
+
+        <br/>
+        <label for="result">Result</label>
+        <input
+                type="text"
+                placeholder="..."
+                class="u-full-width"
+                name="result"
+                value="{{ sum }}"
+                readonly
+        />
+        <br />
+        <br />
+        {% if error %}
+        <div class="alert" style="color: red">
+          {{ error }}
+        </div>
+        {% endif %}
+        {% if warning %}
+            <div class="alert" style="color: orange">
+                {{ warning }}
+            </div>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>
+
+
