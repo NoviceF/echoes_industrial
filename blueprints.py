@@ -33,12 +33,13 @@ MINERALS_TO_INGAME_NAME = {
 
 class Planetary:
     def __init__(self,
-                 lusteringAlloy=0, gleamingAlloy=0, preciousAlloy=0, condensedAlloy=0,
-            motleyCompound=0, sheenCompound=0, crystalCompound=0,
-            opulentCompound=0, glossyCompound=0,
-            baseMetals=0, heavyMetals=0, nobleMetals=0, reactiveMetals=0, toxicMetals=0,
-            fiberComposite=0):
-
+                 lusteringAlloy=0, gleamingAlloy=0, preciousAlloy=0,
+                 condensedAlloy=0,
+                 motleyCompound=0, sheenCompound=0, crystalCompound=0,
+                 opulentCompound=0, glossyCompound=0,
+                 baseMetals=0, heavyMetals=0, nobleMetals=0, reactiveMetals=0,
+                 toxicMetals=0,
+                 fiberComposite=0):
         self.dictionary = {
             'lusteringAlloy': lusteringAlloy,
             'gleamingAlloy': gleamingAlloy,
@@ -74,9 +75,10 @@ class Minerals:
 
 
 class BluePrint:
-    def __init__(self, name, planetary=Planetary(), minerals=Minerals(tritanium=0,
-                                                                      pyerite=0,
-                                                                      mexallon=0)):
+    def __init__(self, name, planetary=Planetary(),
+                 minerals=Minerals(tritanium=0,
+                                   pyerite=0,
+                                   mexallon=0)):
         self.name = name
         self.planetary = planetary
         self.minerals = minerals
@@ -111,7 +113,7 @@ bpListBase = [
                   nocxium=36041,
                   zydrine=11763
               )
-    ),
+              ),
     BluePrint(name='Prophecy Blueprint',
               planetary=Planetary(
                   sheenCompound=30114,
@@ -128,7 +130,7 @@ bpListBase = [
                   nocxium=38235,
                   zydrine=8580
               )
-    ),
+              ),
     BluePrint(name='Ashimmu Blueprint',
               planetary=Planetary(
                   condensedAlloy=125826,
@@ -144,7 +146,7 @@ bpListBase = [
                   isogen=891743,
                   nocxium=258560
               )
-    ),
+              ),
     BluePrint(name='Venture III Blueprint',
               planetary=Planetary(
                   condensedAlloy=2345,
@@ -160,7 +162,107 @@ bpListBase = [
                   isogen=5543,
                   nocxium=1581
               )
-    ),
+              ),
+    BluePrint(name='Vexor Navy Issue Blueprint',
+              planetary=Planetary(
+                  lusteringAlloy=13463,
+                  sheenCompound=14504,
+                  opulentCompound=15351,
+                  heavyMetals=14504,
+                  reactiveMetals=3818
+              ),
+              minerals=Minerals(
+                  tritanium=2465163,
+                  pyerite=674229,
+                  mexallon=219267,
+                  isogen=36293,
+                  nocxium=10347
+              )
+              ),
+    BluePrint(name='Gila Blueprint',
+              planetary=Planetary(
+                  condensedAlloy=127337,
+                  preciousAlloy=99780,
+                  opulentCompound=127337,
+                  reactiveMetals=31662,
+                  toxicMetals=31401
+              ),
+              minerals=Minerals(
+                  tritanium=57888200,
+                  pyerite=17355749,
+                  mexallon=5693337,
+                  isogen=921447,
+                  nocxium=230264,
+                  zydrine=91305,
+                  megacyte=39183
+              )
+              ),
+    BluePrint(name='Vigilant Blueprint',
+              planetary=Planetary(
+                  condensedAlloy=119403,
+                  preciousAlloy=93563,
+                  opulentCompound=119403,
+                  reactiveMetals=29690,
+                  toxicMetals=29445
+              ),
+              minerals=Minerals(
+                  tritanium=53697600,
+                  pyerite=15534594,
+                  mexallon=5287262,
+                  isogen=828404,
+                  nocxium=247812,
+                  zydrine=87201
+              )
+              ),
+    BluePrint(name='Nereus High Mobility Blueprint',
+              planetary=Planetary(
+                  lusteringAlloy=6107,
+                  condensedAlloy=6963,
+                  opulentCompound=6963,
+                  reactiveMetals=1733,
+                  toxicMetals=1718
+              ),
+              minerals=Minerals(
+                  tritanium=1118181,
+                  pyerite=305826,
+                  mexallon=99459,
+                  isogen=16463,
+                  nocxium=4694
+              )
+              ),
+    BluePrint(name='Retriever Blueprint',
+              planetary=Planetary(
+                  condensedAlloy=13409,
+                  preciousAlloy=10508,
+                  opulentCompound=13409,
+                  reactiveMetals=3335,
+                  toxicMetals=3308
+              ),
+              minerals=Minerals(
+                  tritanium=3925214,
+                  pyerite=966006,
+                  mexallon=331332,
+                  isogen=49862,
+                  nocxium=16247,
+                  zydrine=5091
+              )
+              ),
+    BluePrint(name='Succubus Blueprint',
+              planetary=Planetary(
+                  condensedAlloy=44192,
+                  preciousAlloy=34628,
+                  fiberComposite=44192,
+                  reactiveMetals=10988,
+                  toxicMetals=10898
+              ),
+              minerals=Minerals(
+                  tritanium=25921650,
+                  pyerite=5146985,
+                  mexallon=1861805,
+                  isogen=287084,
+                  nocxium=75672
+              )
+              ),
 ]
 
 bpNames = [x.name for x in bpListBase]
