@@ -1,6 +1,7 @@
 import pytest
 
-from data_processing import validate_stats, apply_stats_to_craft_skill
+from data_processing import validate_stats, apply_stats_to_craft_skill, \
+    load_market_prices
 
 
 def test_validate_stats():
@@ -41,3 +42,7 @@ def test_apply_stats_to_craft_skill():
     assert apply_stats_to_craft_skill(4, 0, 0) == 126
     assert apply_stats_to_craft_skill(4, 5, 0) == 106
     assert apply_stats_to_craft_skill(5, 5, 5) == 95
+
+
+def test_load_market_prices():
+    loaded_elements = load_market_prices('stats.csv')

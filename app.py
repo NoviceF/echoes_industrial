@@ -16,9 +16,9 @@ def main():
 @app.route('/sendBuilder', methods=['POST'])
 def send():
     if request.method == 'POST':
-        error, warning, res = read_variables(request)
+        error, warning, res = read_variables(app, request)
         return render_template(
-            'app.html', bpList=bpList, sum=333, error=error, warning=warning)
+            'app.html', bpList=bpList, sum=res, error=error, warning=warning)
 
 
 if __name__ == '__main__':

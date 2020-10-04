@@ -9,7 +9,6 @@
 <div class="container">
     <h3>Eve Echoes Industrial Calculator</h3>
 </div>
-
 <!-- Form -->
 <div class="container">
     <form action="/sendBuilder" method="POST" enctype="multipart/form-data">
@@ -50,12 +49,13 @@
         <br/>
         <br/>
 
-        <label for="jita_minerals_sell_prices">Jita prices file (stats.csv)</label>
+        <label for="market_prices">Market prices file (stats.csv)
+        </label>
         <input
                 type="file"
-                placeholder="Jita prices file (stats.csv)"
+                placeholder="Market prices file (stats.csv)"
                 class="u-full-width"
-                name="jita_minerals_sell_prices"
+                name="market_prices"
         />
 
         <br/>
@@ -66,14 +66,25 @@
 
         <br/>
         <label for="result">Result</label>
-        <input
-                type="text"
+{#        <input#}
+{#                type="text"#}
+{#                placeholder="..."#}
+{#                class="u-full-width"#}
+{#                name="result"#}
+{#                value="{{ sum }}"#}
+{#                readonly#}
+{#        />#}
+        <label
+            class="u-full-width">
+            <textarea
                 placeholder="..."
-                class="u-full-width"
                 name="result"
-                value="{{ sum }}"
                 readonly
-        />
+                class="u-full-width"
+                style="height: 250px">
+            {{sum}}
+            </textarea>
+        </label>
         <br />
         <br />
         {% if error %}
@@ -81,14 +92,8 @@
           {{ error }}
         </div>
         {% endif %}
-        {% if warning %}
-            <div class="alert" style="color: orange">
-                {{ warning }}
-            </div>
-        {% endif %}
     </form>
 </div>
 </body>
 </html>
-
 
