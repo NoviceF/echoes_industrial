@@ -75,17 +75,18 @@ class Minerals:
 
 
 class BluePrint:
-    def __init__(self, name, planetary=Planetary(),
+    def __init__(self, name, productionStartCost, planetary=Planetary(),
                  minerals=Minerals(tritanium=0,
                                    pyerite=0,
                                    mexallon=0)):
         self.name = name
         self.planetary = planetary
         self.minerals = minerals
+        self.productionStartCost = productionStartCost
 
 
 def applyFactorOnBP(factor, bp):
-    modifiedBP = BluePrint(bp.name)
+    modifiedBP = BluePrint(bp.name, productionStartCost=bp.productionStartCost)
     modifiedBP.planetary.dictionary = {
         key: math.ceil(value / 150 * factor) for key, value in
         bp.planetary.dictionary.items()}
@@ -98,6 +99,7 @@ def applyFactorOnBP(factor, bp):
 
 bpListBase = [
     BluePrint(name='Harbinger Prototype Blueprint',
+              productionStartCost=25000000,
               planetary=Planetary(
                   sheenCompound=32526,
                   preciousAlloy=26975,
@@ -115,6 +117,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Prophecy Blueprint',
+              productionStartCost=25000000,
               planetary=Planetary(
                   sheenCompound=30114,
                   preciousAlloy=24975,
@@ -132,6 +135,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Ashimmu Blueprint',
+              productionStartCost=200000000,
               planetary=Planetary(
                   condensedAlloy=125826,
                   preciousAlloy=98597,
@@ -148,6 +152,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Venture III Blueprint',
+              productionStartCost=1500000,
               planetary=Planetary(
                   condensedAlloy=2345,
                   preciousAlloy=1838,
@@ -164,6 +169,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Vexor Navy Issue Blueprint',
+              productionStartCost=6500000,
               planetary=Planetary(
                   lusteringAlloy=13463,
                   sheenCompound=14504,
@@ -180,6 +186,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Gila Blueprint',
+              productionStartCost=200000000,
               planetary=Planetary(
                   condensedAlloy=127337,
                   preciousAlloy=99780,
@@ -198,6 +205,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Vigilant Blueprint',
+              productionStartCost=200000000,
               planetary=Planetary(
                   condensedAlloy=119403,
                   preciousAlloy=93563,
@@ -215,6 +223,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Nereus High Mobility Blueprint',
+              productionStartCost=3000000,
               planetary=Planetary(
                   lusteringAlloy=6107,
                   condensedAlloy=6963,
@@ -231,6 +240,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Retriever Blueprint',
+              productionStartCost=15000000,
               planetary=Planetary(
                   condensedAlloy=13409,
                   preciousAlloy=10508,
@@ -248,6 +258,7 @@ bpListBase = [
               )
               ),
     BluePrint(name='Succubus Blueprint',
+              productionStartCost=55000000,
               planetary=Planetary(
                   condensedAlloy=44192,
                   preciousAlloy=34628,

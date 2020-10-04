@@ -119,6 +119,9 @@ def calculate(builder1, builder2, builder3, blueprint, save_path):
             item, market_prices, modifiedBP.minerals.dictionary,
             result_price_info, MINERALS_TO_INGAME_NAME)
 
+    totalPrice += modifiedBP.productionStartCost
+    result_price_info['Build start cost:'] = modifiedBP.productionStartCost
+
     result_price_info['Total price:'] = math.ceil(totalPrice)
     
     return result_price_info
