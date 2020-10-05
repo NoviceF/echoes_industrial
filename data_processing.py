@@ -98,12 +98,14 @@ def calculate(builder1, builder2, builder3, blueprint, save_path):
 
     totalPrice = 0
 
+    bp_price = market_prices[modifiedBP.name].buy
+
     result_price_info = {
         'name': modifiedBP.name,
-        'bp price': market_prices[modifiedBP.name].sell
+        'bp price': bp_price
     }
 
-    totalPrice += market_prices[modifiedBP.name].sell
+    totalPrice += bp_price
 
     for item in modifiedBP.planetary.dictionary:
         if not modifiedBP.planetary.dictionary[item]:
