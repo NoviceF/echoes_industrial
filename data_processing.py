@@ -75,7 +75,7 @@ def collect_items_prices(
     ingame_item_name = dictToIngame[item]
     item_price = market_prices[ingame_item_name]
     internal_items_count = internalItemsDict[item]
-    item_sell_price = int(item_price.sell)
+    item_sell_price = int(item_price.buy)
     total_items_price = item_sell_price * internal_items_count
     result_price_info[ingame_item_name] = '({}) x {} = {}'.format(
         item_sell_price,
